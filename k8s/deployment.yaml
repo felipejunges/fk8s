@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: fk8s
-          image: fk8s:v4
+          image: fk8s:v5
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
