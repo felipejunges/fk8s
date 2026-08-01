@@ -22,9 +22,11 @@ spec:
       labels:
         app: fk8s
     spec:
+      imagePullSecrets:
+        - name: ghcr-pull-secret
       containers:
         - name: fk8s
-          image: fk8s:v6
+          image: ghcr.io/felipejunges/fk8s:v6
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
