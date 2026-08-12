@@ -36,17 +36,21 @@ spec:
               value: "Production"
             - name: ASPNETCORE_HTTP_PORTS
               value: "8080"
+          startupProbe:
+            httpGet:
+              path: /weatherforecast
+              port: http
+            failureThreshold: 30
+            periodSeconds: 5
           readinessProbe:
             httpGet:
               path: /weatherforecast
               port: http
-            initialDelaySeconds: 5
             periodSeconds: 10
           livenessProbe:
             httpGet:
               path: /weatherforecast
               port: http
-            initialDelaySeconds: 10
             periodSeconds: 15
           resources:
             requests:
